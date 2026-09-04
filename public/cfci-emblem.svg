@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none" role="img" aria-label="UNICEF Child Friendly Cities Emblem">
+  <circle cx="60" cy="60" r="60" fill="#00AEEF"/>
+  
+  <g transform="translate(60, 60) scale(0.48) translate(-155, -100)" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Horizon Arch -->
+    <path d="M 68 158 A 78 78 0 0 1 242 158" stroke-width="5"/>
+
+    <!-- Left Tree -->
+    <line x1="68" y1="158" x2="68" y2="148" stroke-width="4.5"/>
+    <path d="M 60 148 C 56 145 56 138 61 135 C 62 130 68 128 73 131 C 77 127 84 129 86 134 C 91 136 91 143 87 147 C 84 150 78 150 75 148" stroke-width="4" fill="#00AEEF"/>
+
+    <!-- Left Skyline & Arrow -->
+    <path d="M 88 152 L 88 122 L 100 110 L 108 118 L 108 128 L 118 128 L 118 108 L 128 108 L 128 94 L 140 94 L 140 110" stroke-width="4.5"/>
+    <path d="M 94 116 L 100 110 L 100 120" stroke-width="4.5"/>
+
+    <!-- Joyful Child figure on apex -->
+    <circle cx="160" cy="50" r="9" stroke-width="4.5" fill="#00AEEF"/>
+    <path d="M 146 66 L 160 84 L 174 66" stroke-width="5"/>
+    <line x1="160" y1="84" x2="160" y2="104" stroke-width="5"/>
+    <path d="M 152 120 L 160 104 L 168 120" stroke-width="5"/>
+
+    <!-- Bicycle on the right slope -->
+    <circle cx="196" cy="98" r="7" stroke-width="4"/>
+    <circle cx="218" cy="110" r="7" stroke-width="4"/>
+    <path d="M 196 98 L 206 98 L 218 110 M 206 98 L 204 88 M 198 88 L 208 88 M 206 98 L 214 92 L 218 110 M 211 92 L 217 92" stroke-width="3.8"/>
+
+    <!-- Cloud above Bicycle -->
+    <path d="M 226 70 C 224 65 228 60 234 60 C 238 56 246 56 250 61 C 255 60 260 64 259 69 C 263 73 261 78 256 79 L 230 79 C 224 79 223 74 226 70 Z" stroke-width="3.8" fill="#00AEEF"/>
+
+    <!-- Right Skyline -->
+    <path d="M 228 124 L 236 124 L 236 136 L 244 136 L 244 148" stroke-width="4.5"/>
+
+    <!-- Right Tree -->
+    <line x1="244" y1="158" x2="244" y2="148" stroke-width="4.5"/>
+    <path d="M 236 148 C 232 145 233 138 238 135 C 240 130 246 128 251 131 C 255 127 261 130 263 135 C 267 137 266 144 262 148 Z" stroke-width="4" fill="#00AEEF"/>
+  </g>
+</svg>

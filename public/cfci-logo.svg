@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 210" fill="none" role="img" aria-label="UNICEF Child Friendly Cities Initiative Logo">
+  <!-- Background (optional / can be transparent or UNICEF Cyan) -->
+  <rect width="760" height="210" rx="16" fill="#00AEEF"/>
+
+  <!-- CFCI Symbol -->
+  <g stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Horizon Arch -->
+    <path d="M 68 158 A 78 78 0 0 1 242 158" stroke-width="4.5"/>
+
+    <!-- Left Tree -->
+    <line x1="68" y1="158" x2="68" y2="148" stroke-width="4"/>
+    <path d="M 60 148 C 56 145 56 138 61 135 C 62 130 68 128 73 131 C 77 127 84 129 86 134 C 91 136 91 143 87 147 C 84 150 78 150 75 148" stroke-width="3.5" fill="#00AEEF"/>
+
+    <!-- Left Skyline & Arrow -->
+    <path d="M 88 152 L 88 122 L 100 110 L 108 118 L 108 128 L 118 128 L 118 108 L 128 108 L 128 94 L 140 94 L 140 110" stroke-width="4"/>
+    <!-- Arrowhead pointing up-left -->
+    <path d="M 94 116 L 100 110 L 100 120" stroke-width="4"/>
+
+    <!-- Joyful Child figure on apex -->
+    <circle cx="160" cy="50" r="8.5" stroke-width="4.2" fill="#00AEEF"/>
+    <!-- Child Arms raised in V -->
+    <path d="M 146 66 L 160 84 L 174 66" stroke-width="4.5"/>
+    <!-- Child Torso & Legs -->
+    <line x1="160" y1="84" x2="160" y2="104" stroke-width="4.5"/>
+    <path d="M 152 120 L 160 104 L 168 120" stroke-width="4.5"/>
+
+    <!-- Bicycle on the right slope -->
+    <circle cx="196" cy="98" r="6.5" stroke-width="3.8"/>
+    <circle cx="218" cy="110" r="6.5" stroke-width="3.8"/>
+    <!-- Bike Frame -->
+    <path d="M 196 98 L 206 98 L 218 110 M 206 98 L 204 88 M 198 88 L 208 88 M 206 98 L 214 92 L 218 110 M 211 92 L 217 92" stroke-width="3.5"/>
+
+    <!-- Cloud above Bicycle -->
+    <path d="M 226 70 C 224 65 228 60 234 60 C 238 56 246 56 250 61 C 255 60 260 64 259 69 C 263 73 261 78 256 79 L 230 79 C 224 79 223 74 226 70 Z" stroke-width="3.5" fill="#00AEEF"/>
+
+    <!-- Right Skyline -->
+    <path d="M 228 124 L 236 124 L 236 136 L 244 136 L 244 148" stroke-width="4"/>
+
+    <!-- Right Tree -->
+    <line x1="244" y1="158" x2="244" y2="148" stroke-width="4"/>
+    <path d="M 236 148 C 232 145 233 138 238 135 C 240 130 246 128 251 131 C 255 127 261 130 263 135 C 267 137 266 144 262 148 Z" stroke-width="3.5" fill="#00AEEF"/>
+  </g>
+
+  <!-- Middle Text: Child Friendly Cities Initiative -->
+  <g fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="600" letter-spacing="-0.02em">
+    <text x="290" y="70" font-size="29">Child</text>
+    <text x="290" y="103" font-size="29">Friendly</text>
+    <text x="290" y="136" font-size="29">Cities</text>
+    <text x="290" y="169" font-size="29">Initiative</text>
+  </g>
+
+  <!-- Vertical Divider Bar -->
+  <line x1="432" y1="36" x2="432" y2="174" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Right Section: UNICEF & for every child -->
+  <g fill="#FFFFFF">
+    <!-- unicef Wordmark -->
+    <text x="460" y="98" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="700" font-size="48" letter-spacing="-1.5px">unicef</text>
+
+    <!-- UNICEF Emblem (Mother & Child with Laurel Wreath Globe) -->
+    <g transform="translate(642, 78) scale(0.95)" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Outer Laurel Wreath / Circle -->
+      <circle cx="0" cy="0" r="24" stroke-width="2.2"/>
+      <ellipse cx="0" cy="0" rx="14" ry="24" stroke-width="1.6"/>
+      <line x1="-24" y1="0" x2="24" y2="0" stroke-width="1.6"/>
+      <line x1="-20" y1="-12" x2="20" y2="-12" stroke-width="1.4"/>
+      <line x1="-20" y1="12" x2="20" y2="12" stroke-width="1.4"/>
+      
+      <!-- Mother and Child Silhouette in Center -->
+      <circle cx="-2" cy="-4" r="3.2" fill="#FFFFFF"/>
+      <path d="M -8 10 C -8 3, 2 3, 2 10 Z" fill="#FFFFFF"/>
+      <circle cx="5" cy="1" r="2.2" fill="#FFFFFF"/>
+      <path d="M 3 10 C 3 6, 9 6, 9 10 Z" fill="#FFFFFF"/>
+
+      <!-- Olive Wreath Sprigs -->
+      <path d="M -27 16 C -31 0, -26 -16, -16 -24" stroke-width="2"/>
+      <path d="M 27 16 C 31 0, 26 -16, 16 -24" stroke-width="2"/>
+    </g>
+
+    <!-- Horizontal Divider -->
+    <line x1="460" y1="116" x2="688" y2="116" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round"/>
+
+    <!-- for every child Subtext -->
+    <text x="460" y="156" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="500" font-size="28" letter-spacing="-0.02em">for every child</text>
+  </g>
+</svg>

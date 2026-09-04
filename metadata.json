@@ -1,0 +1,6 @@
+{
+  "name": "City to School | 유니세프 한국위원회",
+  "description": "학교와 유니세프아동친화도시를 연결하여 아동의 목소리를 지역사회 변화로 이끄는 City to School 공식 홈페이지",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
