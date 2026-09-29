@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 100" fill="none" role="img" aria-label="UNICEF for every child">
+  <!-- UNICEF Cyan Color: #00AEEF -->
+  <g fill="#00AEEF">
+    <!-- unicef Wordmark -->
+    <text x="10" y="70" font-family="'Frutiger', 'Univers', 'Helvetica Neue', 'Arial', sans-serif" font-weight="700" font-size="54" letter-spacing="-1.5px">unicef</text>
+
+    <!-- UNICEF Emblem (Mother & Child with Laurel Wreath Globe) -->
+    <g transform="translate(230, 50) scale(1.05)" stroke="#00AEEF" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Globe Outer Circle -->
+      <circle cx="0" cy="0" r="27" stroke-width="2.4" fill="none"/>
+      <!-- Globe Meridians & Parallels -->
+      <ellipse cx="0" cy="0" rx="16" ry="27" stroke-width="1.8" fill="none"/>
+      <ellipse cx="0" cy="0" rx="27" ry="11" stroke-width="1.6" fill="none"/>
+      <line x1="-27" y1="0" x2="27" y2="0" stroke-width="1.8"/>
+      <line x1="-24" y1="-14" x2="24" y2="-14" stroke-width="1.4"/>
+      <line x1="-24" y1="14" x2="24" y2="14" stroke-width="1.4"/>
+
+      <!-- Mother and Child Silhouette in Center -->
+      <!-- Mother Head -->
+      <circle cx="-3" cy="-5" r="4.2" fill="#00AEEF" stroke="none"/>
+      <!-- Mother Body / Arms holding child -->
+      <path d="M -11 13 C -11 4, 3 4, 3 13 Z" fill="#00AEEF" stroke="none"/>
+      <!-- Child Head -->
+      <circle cx="6" cy="1" r="3" fill="#00AEEF" stroke="none"/>
+      <!-- Child Body -->
+      <path d="M 4 13 C 4 7, 11 7, 11 13 Z" fill="#00AEEF" stroke="none"/>
+
+      <!-- Olive Wreath Laurel Branches -->
+      <!-- Left Branch -->
+      <path d="M -31 18 C -36 0, -30 -18, -19 -27" stroke-width="2.4" fill="none"/>
+      <!-- Left Leaves -->
+      <ellipse cx="-33" cy="10" rx="4" ry="2" transform="rotate(-30 -33 10)" fill="#00AEEF" stroke="none"/>
+      <ellipse cx="-35" cy="0" rx="4" ry="2" transform="rotate(-15 -35 0)" fill="#00AEEF" stroke="none"/>
+      <ellipse cx="-33" cy="-10" rx="4" ry="2" transform="rotate(10 -33 -10)" fill="#00AEEF" stroke="none"/>
+      <ellipse cx="-27" cy="-20" rx="4" ry="2" transform="rotate(35 -27 -20)" fill="#00AEEF" stroke="none"/>
+      <ellipse cx="-19" cy="-27" rx="3.5" ry="1.8" transform="rotate(55 -19 -27)" fill="#00AEEF" stroke="none"/>
+
+      <!-- Right Branch -->
+      <path d="M 31 18 C 36 0, 30 -18, 19 -27" stroke-width="2.4" fill="none"/>
+      <!-- Right Leaves -->
+      <ellipse cx="33" cy="10" rx="4" ry="2" transform="rotate(30 33 10)" fill="#00AEEF" stroke="none"/>
+      <ellipse cx="35" cy="0" rx="4" ry="2" transform="rotate(15 35 0)" fill="#00AEEF" stroke="none"/>
+      <ellipse cx="33" cy="-10" rx="4" ry="2" transform="rotate(-10 33 -10)" fill="#00AEEF" stroke="none"/>
+      <ellipse cx="27" cy="-20" rx="4" ry="2" transform="rotate(-35 27 -20)" fill="#00AEEF" stroke="none"/>
+      <ellipse cx="19" cy="-27" rx="3.5" ry="1.8" transform="rotate(-55 19 -27)" fill="#00AEEF" stroke="none"/>
+    </g>
+
+    <!-- Vertical Dividing Line -->
+    <line x1="285" y1="12" x2="285" y2="88" stroke="#00AEEF" stroke-width="2.5" stroke-linecap="round"/>
+
+    <!-- for every child Text -->
+    <text x="306" y="69" font-family="'Century Gothic', 'Tw Cen MT', 'Avenir Next', 'Avenir', 'Segoe UI', -apple-system, sans-serif" font-weight="400" font-size="49" letter-spacing="-0.5px">for every child</text>
+  </g>
+</svg>

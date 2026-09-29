@@ -18,8 +18,8 @@ export const CoreConceptSection: React.FC = () => {
             City to School 핵심 운영 구조
           </h2>
           <p className="text-slate-500 text-base sm:text-lg leading-relaxed">
-            아동의 배움에서 출발하여 지역사회의 제도와 환경이 변화하기까지,<br className="hidden sm:inline" />
-            4단계의 선순환 프로세스를 통해 실질적인 참여권을 보장합니다.
+            아동권리에 대한 이해에서 출발하여 지역사회의 제도와 환경이 변화하기까지,<br className="hidden sm:inline" />
+            4단계의 선순환 프로세스를 통해 실질적인 아동의 참여권을 보장합니다.
           </p>
         </div>
 
@@ -70,15 +70,6 @@ export const CoreConceptSection: React.FC = () => {
             );
           })}
         </div>
-
-        {/* Catchphrase Banner */}
-        <div className="mt-12 bg-[#F8FBFF] border border-slate-100 rounded-2xl p-5 text-center flex flex-col sm:flex-row items-center justify-center gap-3 text-slate-700 font-medium text-sm">
-          <span className="w-2 h-2 rounded-full bg-[#009EDB]" />
-          <span>
-            배우고, 발견하고, 제안하고, 함께 바꿉니다 — 아동과 도시가 함께 성장하는 가장 확실한 방법입니다.
-          </span>
-        </div>
-
       </div>
     </section>
   );

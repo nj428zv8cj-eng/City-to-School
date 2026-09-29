@@ -1,12 +1,12 @@
 import React from 'react';
-import { School, Building2, HeartHandshake, CheckCircle2, ArrowUpRight } from 'lucide-react';
+import { School, Building2, HeartHandshake, CheckCircle2 } from 'lucide-react';
 import { STAKEHOLDERS_DATA } from '../data/mockData';
 
 interface StakeholdersSectionProps {
-  onOpenInquiry: () => void;
+  onOpenInquiry?: () => void;
 }
 
-export const StakeholdersSection: React.FC<StakeholdersSectionProps> = ({ onOpenInquiry }) => {
+export const StakeholdersSection: React.FC<StakeholdersSectionProps> = () => {
   const icons = [School, Building2, HeartHandshake];
 
   return (
@@ -21,9 +21,9 @@ export const StakeholdersSection: React.FC<StakeholdersSectionProps> = ({ onOpen
           <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-4">
             City to School 참여 주체와 역할
           </h2>
-          <p className="text-slate-500 text-base sm:text-lg leading-relaxed">
-            학교, 유니세프아동친화도시(지자체), 유니세프 한국위원회가 긴밀히 협력하여
-            단단한 아동 참여 안전망을 만들어갑니다.
+          <p className="text-slate-500 text-base sm:text-lg leading-relaxed break-keep">
+            학교, 유니세프아동친화도시, 유니세프 한국위원회가 연계하여<br />
+            아동친화적인 거버넌스를 만들어갑니다.
           </p>
         </div>
 
@@ -40,18 +40,10 @@ export const StakeholdersSection: React.FC<StakeholdersSectionProps> = ({ onOpen
               >
                 <div>
                   {/* Top Role Badge & Icon */}
-                  <div className="flex items-start justify-between mb-6">
-                    <div>
-                      <span className="inline-block text-xs font-bold px-3 py-1 rounded-full mb-2 bg-blue-50 text-[#009EDB]">
-                        {stakeholder.badge}
-                      </span>
-                      <h3 className="text-2xl font-black text-slate-900 flex items-center gap-2">
-                        {stakeholder.role}
-                      </h3>
-                      <p className="text-xs font-medium text-slate-400 mt-1">
-                        {stakeholder.target}
-                      </p>
-                    </div>
+                  <div className="flex items-center justify-between mb-6">
+                    <h3 className="text-2xl font-black text-slate-900 flex items-center gap-2">
+                      {stakeholder.role}
+                    </h3>
 
                     <div className="w-12 h-12 rounded-2xl bg-blue-50/60 group-hover:bg-[#009EDB] text-[#009EDB] group-hover:text-white flex items-center justify-center transition-all duration-300 shadow-2xs">
                       <Icon className="w-6 h-6" />
@@ -76,20 +68,6 @@ export const StakeholdersSection: React.FC<StakeholdersSectionProps> = ({ onOpen
                       </div>
                     ))}
                   </div>
-                </div>
-
-                {/* Bottom Card Action */}
-                <div className="mt-8 pt-5 border-t border-slate-100 flex items-center justify-between">
-                  <span className="text-xs font-normal text-slate-400">
-                    상호 신뢰 기반 파트너십
-                  </span>
-                  <button
-                    id={`stakeholder-inquiry-btn-${index + 1}`}
-                    onClick={onOpenInquiry}
-                    className="text-xs font-bold text-[#009EDB] hover:text-[#007fb1] flex items-center gap-1 group-hover:underline cursor-pointer transition-colors"
-                  >
-                    참여 상담 신청 <ArrowUpRight className="w-3.5 h-3.5" />
-                  </button>
                 </div>
               </div>
             );

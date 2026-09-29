@@ -10,22 +10,29 @@ import {
   Filter, 
   Layers,
   LayoutGrid,
-  List
+  List,
+  Lock,
+  LogIn
 } from 'lucide-react';
 import { RESOURCES_DATA } from '../data/mockData';
 import { ResourceCategory, ResourceItem } from '../types';
 import { triggerResourceDownload } from '../utils/fileDownloader';
+import { UserSession } from './LoginModal';
 
 interface ResourcesSectionProps {
   isHomeViewOnly?: boolean;
   onNavigateToAllResources?: () => void;
   onNotify: (msg: string) => void;
+  user?: UserSession | null;
+  onOpenLogin?: () => void;
 }
 
 export const ResourcesSection: React.FC<ResourcesSectionProps> = ({
   isHomeViewOnly = false,
   onNavigateToAllResources,
-  onNotify
+  onNotify,
+  user,
+  onOpenLogin
 }) => {
   const [selectedCategory, setSelectedCategory] = useState<ResourceCategory>('전체');
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -34,10 +41,9 @@ export const ResourcesSection: React.FC<ResourcesSectionProps> = ({
   const categories: ResourceCategory[] = [
     '전체',
     '사업 안내',
-    '아동권리교육',
-    '아동참여활동',
-    '운영 양식',
-    '홍보자료'
+    '아동권리 교육',
+    '아동참여 활동',
+    '운영 양식'
   ];
 
   const filteredResources = useMemo(() => {
@@ -67,6 +73,7 @@ export const ResourcesSection: React.FC<ResourcesSectionProps> = ({
       case 'PDF':
         return 'bg-red-50 text-red-600 border-transparent';
       case 'PPTX':
+      case 'PPT':
         return 'bg-orange-50 text-orange-600 border-transparent';
       case 'HWP':
         return 'bg-blue-50 text-[#009EDB] border-transparent';
@@ -82,7 +89,7 @@ export const ResourcesSection: React.FC<ResourcesSectionProps> = ({
   };
 
   return (
-    <section id="resources" className="py-16 sm:py-20 bg-[#F8FBFF] border-t border-slate-100">
+    <section id="resources" className="py-16 sm:py-20 bg-[#F8FBFF] border-t border-slate-100 scroll-mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header Bar */}
@@ -91,12 +98,17 @@ export const ResourcesSection: React.FC<ResourcesSectionProps> = ({
             <span className="text-[#009EDB] font-bold text-xs tracking-widest uppercase mb-3 block">
               DOCUMENT DOWNLOAD CENTER
             </span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-              {isHomeViewOnly ? '주요 사업 자료' : 'City to School 자료실'}
-            </h2>
-            <p className="text-slate-500 text-sm mt-1">
-              사업 안내서, 교육 워크북, 정책 제안서 표준 양식 등 운영에 필요한 공식 문서를 제공합니다.
-            </p>
+            <div className="flex items-center gap-2.5 flex-wrap">
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+                {isHomeViewOnly ? '주요 사업 자료' : 'City to School 자료실'}
+              </h2>
+              {!user && (
+                <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-50 text-amber-700 border border-amber-200">
+                  <Lock className="w-3 h-3 text-amber-600" />
+                  <span>로그인 전용</span>
+                </span>
+              )}
+            </div>
           </div>
 
           {isHomeViewOnly && onNavigateToAllResources && (
@@ -111,8 +123,41 @@ export const ResourcesSection: React.FC<ResourcesSectionProps> = ({
           )}
         </div>
 
-        {/* Search & Category Filter (Full view only) */}
-        {!isHomeViewOnly && (
+        {/* Auth Locked State when not logged in */}
+        {!user ? (
+          <div
+            id="resources-auth-locked-box"
+            className="bg-white rounded-3xl border border-blue-100/80 p-8 sm:p-14 text-center max-w-2xl mx-auto shadow-xs my-4"
+          >
+            <div className="w-14 h-14 rounded-2xl bg-blue-50 border border-blue-100 text-[#009EDB] flex items-center justify-center mx-auto mb-4 shadow-2xs">
+              <Lock className="w-6 h-6 text-[#009EDB]" />
+            </div>
+            <span className="inline-block px-3 py-1 bg-blue-50 text-[#009EDB] rounded-full text-xs font-bold mb-3 border border-blue-100/60">
+              참여 기관 전용 자료
+            </span>
+            <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mb-2">
+              자료실은 로그인 후 이용하실 수 있습니다
+            </h3>
+            <p className="text-slate-600 text-sm leading-relaxed max-w-lg mx-auto mb-6">
+              사업 안내 가이드북, 아동권리교육 워크북 및 PPT, 학생 활동지, 예산 정산 서식 등<br className="hidden sm:inline" />
+              모든 실무 자료는 참여 지자체 및 학교 교원에게 제공됩니다.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <button
+                type="button"
+                id="resources-login-btn"
+                onClick={onOpenLogin}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm font-bold text-white bg-[#009EDB] hover:bg-[#007fb1] active:scale-[0.99] transition-all shadow-md shadow-[#009EDB]/20 cursor-pointer"
+              >
+                <LogIn className="w-4 h-4" />
+                <span>로그인하고 자료 다운로드하기</span>
+              </button>
+            </div>
+          </div>
+        ) : (
+          <>
+            {/* Search & Category Filter (Full view only) */}
+            {!isHomeViewOnly && (
           <div className="space-y-4 mb-8">
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
               
@@ -283,6 +328,8 @@ export const ResourcesSection: React.FC<ResourcesSectionProps> = ({
               </table>
             </div>
           </div>
+        )}
+          </>
         )}
 
       </div>

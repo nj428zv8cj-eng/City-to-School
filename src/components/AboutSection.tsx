@@ -15,7 +15,7 @@ import {
 
 export const AboutSection: React.FC = () => {
   return (
-    <section id="about" className="py-16 sm:py-24 bg-white">
+    <section id="about" className="py-16 sm:py-24 bg-white border-t border-slate-100 scroll-mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -26,9 +26,10 @@ export const AboutSection: React.FC = () => {
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
             City to School 프로젝트 소개
           </h2>
-          <p className="text-slate-500 text-base sm:text-lg leading-relaxed">
-            아동의 교실과 도시의 행정을 잇는 다리,<br className="hidden sm:inline" />
-            유니세프 한국위원회가 제안하는 새로운 차원의 아동친화도시 실천 모델입니다.
+          <p className="text-slate-500 text-base sm:text-lg leading-relaxed break-keep">
+            학교와 아동친화도시를 잇는 다리,
+            <br />
+            유니세프 한국위원회가 제안하는 새로운 프로젝트입니다.
           </p>
         </div>
 
@@ -48,14 +49,13 @@ export const AboutSection: React.FC = () => {
             
             <div className="text-slate-600 text-base sm:text-lg leading-relaxed space-y-4 font-normal">
               <p className="font-semibold text-slate-900 text-lg sm:text-xl border-l-4 border-[#009EDB] pl-4 py-1">
-                City to School은 학교와 유니세프아동친화도시를 연결하여 학교에서 시작된 아동의 목소리가 지역사회의 실제 변화로 이어질 수 있도록 지원하는 프로젝트입니다.
+                City to School은 학교와 아동친화도시를 연결하여, 학교에서 시작된 아동의 목소리가 지역사회의 실제 변화로 이어질 수 있도록 지원하는 프로젝트입니다.
               </p>
-              <p className="text-slate-500">
-                그동안 아동권리교육은 교실 안의 지식 습득에 머무르거나, 지자체의 아동참여위원회는 일부 선발된 소수 아동의 형식적 의견 수렴에 그치는 한계가 있었습니다. 
-                City to School은 모든 아동이 생활하는 <strong className="text-slate-800 font-semibold">초등학교 정규 교육과정</strong>과 <strong className="text-slate-800 font-semibold">지방자치단체의 행정 시스템</strong>을 정면으로 연결합니다.
+              <p className="text-slate-600">
+                아동권리 교육과 아동참여가 <strong className="text-slate-900 font-semibold">모든 아동의 일상 속에서 이루어질 수 있도록 학교의 정규 교육과정과 지방자치단체의 행정 체계를 연결합니다.</strong> 이를 통해 아동이 자신의 권리를 배우는 데서 나아가, 자신이 살아가는 학교와 지역사회의 문제를 발견하고 변화에 참여할 수 있는 기회를 마련합니다.
               </p>
-              <p className="text-slate-500">
-                아이들이 직접 등굣길, 놀이터, 공공시설 등 일상 공간을 관찰하며 문제를 발굴하고 정책 제안서를 작성하면, 지자체는 이를 정식 검토하여 예산과 정책에 반영하고, 그 결과를 다시 아이들에게 설명해 주는 진정한 의미의 '참여권의 선순환'을 구축합니다.
+              <p className="text-slate-600">
+                아동들은 학교와 동네를 직접 살펴보며 권리와 관련된 문제를 발견하고, 이를 해결하기 위한 의견을 제안합니다. 지자체는 아동의 의견을 검토하여 정책과 사업에 반영하고, 그 결과와 이유를 다시 아동에게 알려줍니다. <strong className="text-slate-900 font-semibold">City to School은 이러한 과정을 통해 아동의 목소리가 지역사회의 변화로 이어지는 지속가능한 참여의 선순환을 만들어갑니다.</strong>
               </p>
             </div>
           </div>
@@ -68,7 +68,7 @@ export const AboutSection: React.FC = () => {
               왜 City to School인가요?
             </h3>
             <p className="text-slate-500 text-sm sm:text-base">
-              아동, 학교, 지역사회 모두에게 실질적인 가치와 성장의 기회를 제공합니다.
+              아동의 성장을 돕고, 학교의 아동권리 교육을 지원하며, 지역사회의 변화를 만듭니다.
             </p>
           </div>
 
@@ -85,16 +85,16 @@ export const AboutSection: React.FC = () => {
                 아동에게
               </h4>
               <p className="text-slate-500 text-sm leading-relaxed mb-4">
-                자신의 권리를 이해하고 학교와 지역사회의 문제에 의견을 표현하는 경험을 제공합니다.
+                자신과 타인의 권리를 이해하고, 학교와 지역사회의 문제에 직접 목소리를 내며 변화를 만들어가는 경험을 제공합니다.
               </p>
               <ul className="space-y-2 text-xs text-slate-500 font-medium">
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="w-3.5 h-3.5 text-amber-500 shrink-0" />
-                  스스로 삶의 주체로서 효능감 증진
+                  삶의 주체로서 효능감 증진
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="w-3.5 h-3.5 text-amber-500 shrink-0" />
-                  민주시민으로서의 비판적 사고 및 표현력 향상
+                  민주 시민으로서의 비판적 사고와 표현력 향상
                 </li>
               </ul>
             </div>
@@ -111,16 +111,16 @@ export const AboutSection: React.FC = () => {
                 학교에게
               </h4>
               <p className="text-slate-500 text-sm leading-relaxed mb-4">
-                아동권리교육과 아동참여를 학교 교육과정과 일상 속에서 실천할 수 있도록 지원합니다.
+                아동권리 교육과 아동참여를 학교 교육과정과 일상 속에서 지속적으로 실천할 수 있도록 지원합니다.
               </p>
               <ul className="space-y-2 text-xs text-slate-500 font-medium">
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="w-3.5 h-3.5 text-[#009EDB] shrink-0" />
-                  교사 학습공동체 중심의 살아있는 수업 실천
+                  전문적학습공동체를 중심으로 한 아동권리 교육 실천
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="w-3.5 h-3.5 text-[#009EDB] shrink-0" />
-                  학교 밖 지자체 자원과 긴밀한 교육 연계
+                  지자체 지원(예산, 행정 등)을 통한 지역사회 참여로의 확장
                 </li>
               </ul>
             </div>
@@ -137,163 +137,315 @@ export const AboutSection: React.FC = () => {
                 지역사회에게
               </h4>
               <p className="text-slate-500 text-sm leading-relaxed mb-4">
-                아동의 의견을 정책과 지역사회의 변화에 연결하여 아동이 실질적인 지역사회의 구성원으로 참여할 수 있도록 합니다.
+                아동의 의견을 지역사회와 학교의 변화에 연결하여 아동의 참여가 실질적인 변화로 이어지는 구조를 만들 수 있도록 지원합니다.
               </p>
               <ul className="space-y-2 text-xs text-slate-500 font-medium">
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
-                  수요자 체감도 높은 아동친화 행정 실현
+                  아동의 목소리가 반영되는 아동친화적 행정 실현
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
-                  유니세프아동친화도시 상위 인증 핵심 성과 축적
+                  유니세프아동친화도시의 핵심 가치인 아동참여 강화
                 </li>
               </ul>
             </div>
           </div>
         </div>
 
-        {/* 3. 프로젝트 운영 체계 (학교 ↔ 지자체 ↔ 유니세프 한국위원회 다이어그램) */}
+        {/* 3. 프로젝트 운영 체계 (원형 3자 삼각 협력체계 인포그래픽) */}
         <div>
-          <div className="text-center max-w-2xl mx-auto mb-10">
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-3">
+          <div className="text-center max-w-2xl mx-auto mb-8">
+            <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
               프로젝트 운영 체계
             </h3>
-            <p className="text-slate-500 text-sm sm:text-base">
-              학교, 지자체, 유니세프 한국위원회가 유기적인 삼각 협력 체계를 구축하여 지속가능한 운영을 지원합니다.
-            </p>
           </div>
 
-          {/* Triangular Architecture Diagram */}
-          <div className="bg-[#F8FBFF] rounded-[32px] p-6 sm:p-10 border border-slate-100 max-w-5xl mx-auto relative">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
-              
-              {/* Box 1: 학교 */}
-              <div className="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm flex flex-col justify-between hover:border-[#009EDB]/30 transition-all">
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="w-8 h-8 rounded-full bg-blue-50 text-[#009EDB] flex items-center justify-center font-bold text-sm">
-                      A
-                    </span>
-                    <School className="w-6 h-6 text-[#009EDB]" />
-                  </div>
-                  <h4 className="text-lg font-extrabold text-slate-900 mb-2">
-                    학교 (초등학교)
-                  </h4>
-                  <p className="text-xs text-slate-400 mb-4 font-medium">
-                    현장 교육 및 아동 참여 실천
-                  </p>
-                  <ul className="text-xs text-slate-600 space-y-2">
-                    <li className="flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#009EDB]" />
-                      교사 학습공동체 운영
-                    </li>
-                    <li className="flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#009EDB]" />
-                      아동권리 교육과정 재구성
-                    </li>
-                    <li className="flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#009EDB]" />
-                      마을 탐험 및 의견 제안서 발굴
-                    </li>
-                  </ul>
-                </div>
-                <div className="mt-5 pt-3 border-t border-slate-100 text-[11px] text-[#009EDB] font-bold bg-blue-50/70 px-3 py-1.5 rounded-full text-center">
-                  지자체로 ➔ 정책 제안서 전달
-                </div>
-              </div>
+          {/* Circular Cooperation Canvas (참고 이미지 디자인 스타일) */}
+          <div className="bg-white rounded-[32px] p-4 sm:p-8 lg:p-12 border border-slate-200/80 max-w-5xl mx-auto relative overflow-hidden shadow-sm">
+            
+            {/* SVG Interactive Circular Diagram */}
+            <div className="w-full max-w-[760px] mx-auto relative">
+              <svg 
+                viewBox="0 0 840 760" 
+                className="w-full h-auto select-none drop-shadow-xs"
+                style={{ maxHeight: '680px' }}
+              >
+                <defs>
+                  {/* Subtle shadows for nodes */}
+                  <filter id="nodeShadow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feDropShadow dx="0" dy="4" stdDeviation="6" floodOpacity="0.12" />
+                  </filter>
+                  <filter id="centerShadow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feDropShadow dx="0" dy="2" stdDeviation="8" floodOpacity="0.06" />
+                  </filter>
 
-              {/* Box 2: 지자체 */}
-              <div className="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm flex flex-col justify-between hover:border-[#009EDB]/30 transition-all">
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="w-8 h-8 rounded-full bg-blue-50 text-[#009EDB] flex items-center justify-center font-bold text-sm">
-                      B
-                    </span>
-                    <Building2 className="w-6 h-6 text-[#009EDB]" />
-                  </div>
-                  <h4 className="text-lg font-extrabold text-slate-900 mb-2">
-                    지자체 (아동친화도시)
-                  </h4>
-                  <p className="text-xs text-slate-400 mb-4 font-medium">
-                    정책 검토 및 실질적 환경 변화
-                  </p>
-                  <ul className="text-xs text-slate-600 space-y-2">
-                    <li className="flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#009EDB]" />
-                      참여 학교 모집 및 예산 지원
-                    </li>
-                    <li className="flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#009EDB]" />
-                      관련 부서 합동 제안 검토
-                    </li>
-                    <li className="flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#009EDB]" />
-                      아동 눈높이 환류(피드백) 전달
-                    </li>
-                  </ul>
-                </div>
-                <div className="mt-5 pt-3 border-t border-slate-100 text-[11px] text-[#009EDB] font-bold bg-blue-50/70 px-3 py-1.5 rounded-full text-center">
-                  학교로 ➔ 환류 리포트 전달
-                </div>
-              </div>
+                  {/* Arcs for TextPaths (호 형태 경로) - Exact Curvatures around (420, 415) */}
+                  {/* 1. Top-Left: Outer & Inner */}
+                  <path 
+                    id="arc-tl-outer" 
+                    d="M 143 516 A 295 295 0 0 0 295 148" 
+                    fill="none" 
+                  />
+                  <path 
+                    id="arc-tl-inner" 
+                    d="M 216 510 A 225 225 0 0 0 308 220" 
+                    fill="none" 
+                  />
 
-              {/* Box 3: 유니세프 한국위원회 */}
-              <div className="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm flex flex-col justify-between hover:border-[#009EDB]/30 transition-all">
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="w-8 h-8 rounded-full bg-blue-50 text-[#009EDB] flex items-center justify-center font-bold text-sm">
-                      C
-                    </span>
-                    <Globe2 className="w-6 h-6 text-[#009EDB]" />
-                  </div>
-                  <h4 className="text-lg font-extrabold text-slate-900 mb-2">
+                  {/* 2. Top-Right: Outer & Inner */}
+                  <path 
+                    id="arc-tr-outer" 
+                    d="M 545 148 A 295 295 0 0 0 697 516" 
+                    fill="none" 
+                  />
+                  <path 
+                    id="arc-tr-inner" 
+                    d="M 533 220 A 225 225 0 0 0 624 510" 
+                    fill="none" 
+                  />
+
+                  {/* 3. Bottom: Inner & Outer */}
+                  <path 
+                    id="arc-bottom-inner" 
+                    d="M 248 560 A 225 225 0 0 1 592 560" 
+                    fill="none" 
+                  />
+                  <path 
+                    id="arc-bottom-outer" 
+                    d="M 194 605 A 295 295 0 0 1 646 605" 
+                    fill="none" 
+                  />
+                </defs>
+
+                {/* Outer Dotted Orbit Circle */}
+                <circle 
+                  cx="420" 
+                  cy="415" 
+                  r="262" 
+                  fill="none" 
+                  stroke="#CBD5E1" 
+                  strokeWidth="2" 
+                  strokeDasharray="5 5"
+                />
+
+                {/* --- Curved Text Flows Along the Orbit --- */}
+                {/* 1. Top-Left: 유니세프 ⟷ 학교 */}
+                <text className="text-[12.5px] sm:text-[13.5px] font-semibold" fill="#007D88">
+                  <textPath href="#arc-tl-outer" startOffset="50%" textAnchor="middle">
+                    ◀ 아동권리 교육 및 교육 자료, 컨설팅 지원
+                  </textPath>
+                </text>
+                <text className="text-[12.5px] sm:text-[13.5px] font-semibold" fill="#007D88">
+                  <textPath href="#arc-tl-inner" startOffset="50%" textAnchor="middle">
+                    프로젝트 운영 성과 및 사례 공유 ▶
+                  </textPath>
+                </text>
+
+                {/* 2. Top-Right: 유니세프 ⟷ 지자체 */}
+                <text className="text-[12.5px] sm:text-[13.5px] font-semibold" fill="#1B449C">
+                  <textPath href="#arc-tr-outer" startOffset="50%" textAnchor="middle">
+                    ▲ 운영 성과 및 정책 반영 사례 공유
+                  </textPath>
+                </text>
+                <text className="text-[12.5px] sm:text-[13.5px] font-semibold" fill="#1B449C">
+                  <textPath href="#arc-tr-inner" startOffset="50%" textAnchor="middle">
+                    아동권리 교육 및 사업 설명회, 컨설팅 지원 ▶
+                  </textPath>
+                </text>
+
+                {/* 3. Bottom: 학교 ⟷ 지자체 */}
+                <text className="text-[12.5px] sm:text-[13.5px] font-semibold" fill="#007D88">
+                  <textPath href="#arc-bottom-inner" startOffset="50%" textAnchor="middle">
+                    아동 의견 및 정책 제안 전달 ▶
+                  </textPath>
+                </text>
+                <text className="text-[12px] sm:text-[13px] font-semibold" fill="#1B449C">
+                  <textPath href="#arc-bottom-outer" startOffset="50%" textAnchor="middle">
+                    ▼ 예산 지원 및 정책 검토 결과와 반영 내용 환류
+                  </textPath>
+                </text>
+
+                {/* --- CENTER CIRCLE: City to School 운영 체계 --- */}
+                {/* Center base circle */}
+                <circle 
+                  cx="420" 
+                  cy="415" 
+                  r="126" 
+                  fill="#FFFFFF" 
+                  filter="url(#centerShadow)"
+                />
+                {/* Concentric border ring 1 (outer) */}
+                <circle 
+                  cx="420" 
+                  cy="415" 
+                  r="124" 
+                  fill="none" 
+                  stroke="#BAE6FD" 
+                  strokeWidth="2" 
+                />
+                {/* Concentric border ring 2 (inner) */}
+                <circle 
+                  cx="420" 
+                  cy="415" 
+                  r="115" 
+                  fill="none" 
+                  stroke="#E0F2FE" 
+                  strokeWidth="2" 
+                />
+
+                <text 
+                  x="420" 
+                  y="405" 
+                  textAnchor="middle" 
+                  fill="#009EDB" 
+                  className="text-[25px] font-bold tracking-tight"
+                >
+                  City to School
+                </text>
+                <text 
+                  x="420" 
+                  y="444" 
+                  textAnchor="middle" 
+                  fill="#000000" 
+                  className="text-[26px] font-black tracking-tight"
+                >
+                  운영 체계
+                </text>
+
+                {/* --- TOP NODE: 유니세프 한국위원회 (UNICEF 밝은 블루) --- */}
+                <g filter="url(#nodeShadow)">
+                  <circle 
+                    cx="420" 
+                    cy="155" 
+                    r="86" 
+                    fill="#00A3E0" 
+                    className="cursor-pointer hover:brightness-105 transition-all"
+                  />
+                  <circle 
+                    cx="420" 
+                    cy="155" 
+                    r="78" 
+                    fill="none" 
+                    stroke="#FFFFFF" 
+                    strokeWidth="2" 
+                    opacity="0.9"
+                  />
+                  <text 
+                    x="420" 
+                    y="146" 
+                    textAnchor="middle" 
+                    fill="#FFFFFF" 
+                    className="text-[17px] font-bold"
+                  >
                     유니세프 한국위원회
-                  </h4>
-                  <p className="text-xs text-slate-400 mb-4 font-medium">
-                    플랫폼 운영 및 표준 가이드
-                  </p>
-                  <ul className="text-xs text-slate-600 space-y-2">
-                    <li className="flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#009EDB]" />
-                      운영 매뉴얼 & 워크북 보급
-                    </li>
-                    <li className="flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#009EDB]" />
-                      교사 직무연수 및 컨설팅 지원
-                    </li>
-                    <li className="flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#009EDB]" />
-                      성과 모니터링 및 전국 확산
-                    </li>
-                  </ul>
-                </div>
-                <div className="mt-5 pt-3 border-t border-slate-100 text-[11px] text-[#009EDB] font-bold bg-blue-50/70 px-3 py-1.5 rounded-full text-center">
-                  전체 ➔ 신뢰성 보증 & 인증 연계
-                </div>
-              </div>
+                  </text>
+                  <text 
+                    x="420" 
+                    y="173" 
+                    textAnchor="middle" 
+                    fill="#FFFFFF" 
+                    className="text-[12.5px] font-medium tracking-tight"
+                  >
+                    사업 운영 및 전문 지원
+                  </text>
+                </g>
 
+                {/* --- BOTTOM-LEFT NODE: 학교 (딥 티얼 에메랄드) --- */}
+                <g filter="url(#nodeShadow)">
+                  <circle 
+                    cx="195" 
+                    cy="545" 
+                    r="86" 
+                    fill="#00828A" 
+                    className="cursor-pointer hover:brightness-105 transition-all"
+                  />
+                  <circle 
+                    cx="195" 
+                    cy="545" 
+                    r="78" 
+                    fill="none" 
+                    stroke="#FFFFFF" 
+                    strokeWidth="2" 
+                    opacity="0.9"
+                  />
+                  <text 
+                    x="195" 
+                    y="528" 
+                    textAnchor="middle" 
+                    fill="#FFFFFF" 
+                    className="text-[20px] font-bold"
+                  >
+                    학교
+                  </text>
+                  <text 
+                    x="195" 
+                    y="555" 
+                    textAnchor="middle" 
+                    fill="#FFFFFF" 
+                    className="text-[12.5px] font-medium tracking-tight"
+                  >
+                    아동권리 교육 및
+                  </text>
+                  <text 
+                    x="195" 
+                    y="575" 
+                    textAnchor="middle" 
+                    fill="#FFFFFF" 
+                    className="text-[12.5px] font-medium tracking-tight"
+                  >
+                    참여활동 운영
+                  </text>
+                </g>
+
+                {/* --- BOTTOM-RIGHT NODE: 지자체 (코발트 네이비) --- */}
+                <g filter="url(#nodeShadow)">
+                  <circle 
+                    cx="645" 
+                    cy="545" 
+                    r="86" 
+                    fill="#1B449C" 
+                    className="cursor-pointer hover:brightness-105 transition-all"
+                  />
+                  <circle 
+                    cx="645" 
+                    cy="545" 
+                    r="78" 
+                    fill="none" 
+                    stroke="#FFFFFF" 
+                    strokeWidth="2" 
+                    opacity="0.9"
+                  />
+                  <text 
+                    x="645" 
+                    y="528" 
+                    textAnchor="middle" 
+                    fill="#FFFFFF" 
+                    className="text-[20px] font-bold"
+                  >
+                    지자체
+                  </text>
+                  <text 
+                    x="645" 
+                    y="555" 
+                    textAnchor="middle" 
+                    fill="#FFFFFF" 
+                    className="text-[12.5px] font-medium tracking-tight"
+                  >
+                    아동 의견 정책 연계
+                  </text>
+                  <text 
+                    x="645" 
+                    y="575" 
+                    textAnchor="middle" 
+                    fill="#FFFFFF" 
+                    className="text-[12.5px] font-medium tracking-tight"
+                  >
+                    및 환류
+                  </text>
+                </g>
+              </svg>
             </div>
-
-            {/* Interaction Cycle Bar */}
-            <div className="mt-8 bg-white rounded-2xl p-4 border border-slate-100 shadow-xs text-center flex flex-wrap items-center justify-around gap-4 text-xs font-medium text-slate-600">
-              <span className="flex items-center gap-1.5">
-                <span className="font-bold text-[#009EDB]">①</span> 학교 ➔ 아동의 제안 발굴
-              </span>
-              <span className="text-slate-200">|</span>
-              <span className="flex items-center gap-1.5">
-                <span className="font-bold text-[#009EDB]">②</span> 지자체 ➔ 정책 타당성 검토 & 예산 반영
-              </span>
-              <span className="text-slate-200">|</span>
-              <span className="flex items-center gap-1.5">
-                <span className="font-bold text-[#009EDB]">③</span> 유니세프 ➔ 질적 관리 & 컨설팅 지원
-              </span>
-              <span className="text-slate-200">|</span>
-              <span className="flex items-center gap-1.5">
-                <span className="font-bold text-[#009EDB]">④</span> 아동과 지역사회에 환류
-              </span>
-            </div>
-
           </div>
         </div>
 

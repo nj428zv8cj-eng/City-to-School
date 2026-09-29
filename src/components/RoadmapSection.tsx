@@ -8,8 +8,7 @@ import {
   Lightbulb, 
   CheckCircle,
   ExternalLink,
-  Layers,
-  ArrowRight
+  Layers
 } from 'lucide-react';
 import { ROADMAP_STEPS } from '../data/mockData';
 import { NavigationSection } from '../types';
@@ -49,7 +48,7 @@ export const RoadmapSection: React.FC<RoadmapSectionProps> = ({ onNavigateToReso
   };
 
   return (
-    <section id="roadmap" className="py-16 sm:py-24 bg-[#F8FBFF] border-t border-slate-100">
+    <section id="roadmap" className="py-16 sm:py-24 bg-[#F8FBFF] border-t border-slate-100 scroll-mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -61,8 +60,8 @@ export const RoadmapSection: React.FC<RoadmapSectionProps> = ({ onNavigateToReso
             City to School 진행 로드맵
           </h2>
           <p className="text-slate-500 text-base sm:text-lg leading-relaxed">
-            준비부터 성과 확인까지, 연간 7단계 인터랙티브 로드맵입니다.<br />
-            각 단계를 클릭하여 구체적인 실행 계획과 산출물, 현장 팁을 확인하세요.
+            프로젝트 준비부터 성과 확인까지, City to School의 연간 운영 과정을 7단계로 안내합니다.<br />
+            각 단계를 클릭하여 주요 활동과 운영 방법, 현장 활용 팁을 확인해 보세요.
           </p>
         </div>
 
@@ -201,14 +200,14 @@ export const RoadmapSection: React.FC<RoadmapSectionProps> = ({ onNavigateToReso
                         {/* Deliverables */}
                         <div className="bg-slate-50/60 p-4 rounded-2xl border border-slate-100">
                           <div className="flex items-center gap-2 text-xs font-bold text-slate-700 mb-2.5">
-                            <FileText className="w-4 h-4 text-emerald-600" />
-                            핵심 산출물 및 문서
+                            <FileText className="w-4 h-4 text-emerald-600 shrink-0" />
+                            <span>{step.deliverablesTitle || '핵심 산출물 및 문서'}</span>
                           </div>
                           <ul className="space-y-1.5 text-xs text-slate-500 font-medium">
                             {step.deliverables.map((item, idx) => (
-                              <li key={idx} className="flex items-center gap-2">
-                                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                                {item}
+                              <li key={idx} className="flex items-start gap-2">
+                                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 mt-1.5" />
+                                <span className="leading-relaxed">{item}</span>
                               </li>
                             ))}
                           </ul>
@@ -242,22 +241,10 @@ export const RoadmapSection: React.FC<RoadmapSectionProps> = ({ onNavigateToReso
                       <div className="flex items-start gap-3 bg-amber-50/50 border border-amber-100 p-4 rounded-2xl text-xs text-amber-900 leading-relaxed">
                         <Lightbulb className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
                         <div>
-                          <strong className="font-bold">운영 노하우 & TIP: </strong>
+                          <strong className="font-bold">운영 TIP: </strong>
                           {step.tips}
                         </div>
                       </div>
-
-                      {/* Bottom Shortcut to Resources */}
-                      {onNavigateToResources && (
-                        <div className="mt-4 pt-3 border-t border-slate-100 flex justify-end">
-                          <button
-                            onClick={onNavigateToResources}
-                            className="text-xs font-bold text-[#009EDB] hover:underline flex items-center gap-1 cursor-pointer transition-colors"
-                          >
-                            이 단계에 필요한 서식 자료실에서 찾기 <ArrowRight className="w-3.5 h-3.5" />
-                          </button>
-                        </div>
-                      )}
 
                     </div>
                   )}

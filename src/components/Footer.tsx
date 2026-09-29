@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { HeartHandshake, Phone, Mail, MapPin, ExternalLink, Shield, Info, ArrowUp } from 'lucide-react';
+import { Phone, Mail, MapPin, ExternalLink, Shield, Info, ArrowUp } from 'lucide-react';
 import { NavigationSection } from '../types';
 
 interface FooterProps {
@@ -21,30 +21,34 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenInquiry }) => 
         {/* Main Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-slate-100">
           
-          {/* Brand & Slogan (5 cols) */}
-          <div className="lg:col-span-5">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-[#009EDB] flex items-center justify-center text-white shadow-xs">
-                <HeartHandshake className="w-6 h-6" />
+          {/* Brand & Slogan (7 cols) */}
+          <div className="lg:col-span-7">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3.5 mb-5">
+              <div className="h-10 sm:h-11 flex items-center shrink-0">
+                <img
+                  src="/cfci-logo.svg"
+                  alt="유니세프 아동친화도시 로고 (Child Friendly Cities Initiative)"
+                  className="h-10 sm:h-11 w-auto object-contain rounded-lg shadow-2xs"
+                  referrerPolicy="no-referrer"
+                />
               </div>
-              <div>
-                <span className="font-extrabold text-2xl tracking-tight text-slate-900">
+              <div className="sm:border-l sm:border-slate-200 sm:pl-3.5">
+                <span className="font-extrabold text-xl sm:text-2xl tracking-tight text-slate-900 block leading-tight">
                   City to School
                 </span>
-                <span className="block text-xs font-semibold text-[#009EDB]">
-                  유니세프 한국위원회 공식 프로젝트
+                <span className="block text-xs font-semibold text-[#009EDB] mt-0.5">
+                  유니세프아동친화도시와 함께하는 학교 프로젝트
                 </span>
               </div>
             </div>
 
-            <p className="text-sm font-semibold text-slate-800 leading-relaxed max-w-md mb-3">
-              학교에서 시작된 아동의 목소리를<br />
-              우리 지역의 변화로 연결합니다.
+            <p className="text-sm font-semibold text-slate-800 leading-relaxed mb-3">
+              학교에서 시작된 아동의 목소리를 아동친화도시의 변화로 연결합니다.
             </p>
 
-            <p className="text-xs text-slate-400 leading-relaxed max-w-md mb-6">
-              City to School은 학교와 유니세프아동친화도시가 함께 아동의 권리를 배우고, 
-              아동의 의견을 지역사회의 실질적인 정책 및 환경 변화로 연결하는 공공 협력 플랫폼입니다.
+            <p className="text-xs text-slate-400 leading-relaxed max-w-xl mb-6">
+              City to School은 학교와 유니세프아동친화도시가 함께 아동의 권리를 배우고,<br className="hidden sm:inline" />
+              아동의 의견을 지역사회의 실질적인 정책 및 환경 변화로 연결하는 아동친화적인 거버넌스 구축 프로젝트입니다.
             </p>
 
             <button
@@ -56,99 +60,42 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenInquiry }) => 
             </button>
           </div>
 
-          {/* Quick Menu (3 cols) */}
-          <div className="lg:col-span-3">
-            <h4 className="text-xs font-bold text-slate-900 uppercase tracking-widest mb-4">
-              바로가기 메뉴
-            </h4>
-            <ul className="space-y-2.5 text-xs sm:text-sm font-medium">
-              <li>
-                <button
-                  id="footer-link-about"
-                  onClick={() => onNavigate('about')}
-                  className="hover:text-[#009EDB] transition-colors cursor-pointer"
-                >
-                  프로젝트 소개
-                </button>
-              </li>
-              <li>
-                <button
-                  id="footer-link-roadmap"
-                  onClick={() => onNavigate('roadmap')}
-                  className="hover:text-[#009EDB] transition-colors cursor-pointer"
-                >
-                  진행 로드맵 (7단계)
-                </button>
-              </li>
-              <li>
-                <button
-                  id="footer-link-news"
-                  onClick={() => onNavigate('news')}
-                  className="hover:text-[#009EDB] transition-colors cursor-pointer"
-                >
-                  공지사항 및 소식
-                </button>
-              </li>
-              <li>
-                <button
-                  id="footer-link-resources"
-                  onClick={() => onNavigate('resources')}
-                  className="hover:text-[#009EDB] transition-colors cursor-pointer"
-                >
-                  사업 자료실 (가이드북 & 서식)
-                </button>
-              </li>
-              <li>
-                <button
-                  id="footer-link-faq"
-                  onClick={() => onNavigate('faq')}
-                  className="hover:text-[#009EDB] transition-colors cursor-pointer"
-                >
-                  자주 묻는 질문 (FAQ)
-                </button>
-              </li>
-              <li className="pt-2">
-                <button
-                  id="footer-link-inquiry"
-                  onClick={onOpenInquiry}
-                  className="text-[#009EDB] hover:text-[#0089bd] font-bold cursor-pointer"
-                >
-                  사업 참여 1:1 상담 신청 ➔
-                </button>
-              </li>
-            </ul>
-          </div>
+          {/* Operating Info (5 cols) */}
+          <div className="lg:col-span-5 flex flex-col justify-start text-xs text-slate-500 pt-2 lg:pt-1.5">
+            <div className="space-y-2">
+              <h4 className="font-bold text-slate-800 text-sm">
+                유니세프 한국위원회
+              </h4>
+              
+              {/* 길게 연결된 주소 및 연락처 정보 */}
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs text-slate-500">
+                <span className="inline-flex items-center gap-1.5">
+                  <MapPin className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                  서울특별시 마포구 서강로 60 (창전동)
+                </span>
+                <span className="hidden sm:inline text-slate-300">|</span>
+                <span className="inline-flex items-center gap-1.5">
+                  <Phone className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                  <a href="tel:02-724-8565" className="hover:text-[#009EDB] transition-colors">02-724-8565</a>
+                </span>
+                <span className="hidden sm:inline text-slate-300">|</span>
+                <span className="inline-flex items-center gap-1.5">
+                  <Mail className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                  <a href="mailto:cfc@unicef.or.kr" className="hover:text-[#009EDB] transition-colors">cfc@unicef.or.kr</a>
+                </span>
+              </div>
 
-          {/* Operating Info (4 cols) */}
-          <div className="lg:col-span-4 text-xs space-y-2.5 text-slate-500">
-            <h4 className="text-xs font-bold text-slate-900 uppercase tracking-widest mb-4">
-              운영 주관
-            </h4>
-            <p className="font-bold text-slate-800 text-sm">
-              유니세프 한국위원회 (UNICEF Korean Committee)
-            </p>
-            <p className="flex items-start gap-2">
-              <MapPin className="w-3.5 h-3.5 text-slate-400 shrink-0 mt-0.5" />
-              <span>서울특별시 마포구 서강로 60 (창전동) 유니세프 한국위원회</span>
-            </p>
-            <p className="flex items-center gap-2">
-              <Phone className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-              <span>아동친화도시 사업 문의: 02-735-2315</span>
-            </p>
-            <p className="flex items-center gap-2">
-              <Mail className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-              <span>childfriendlycity@unicef.or.kr</span>
-            </p>
-            <div className="pt-3">
-              <a
-                href="https://www.unicef.or.kr"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#F8FBFF] hover:bg-slate-100 border border-slate-100 text-slate-600 transition-colors cursor-pointer"
-              >
-                <span>유니세프 한국위원회 공식 웹사이트</span>
-                <ExternalLink className="w-3 h-3 text-slate-400" />
-              </a>
+              <div className="pt-2">
+                <a
+                  href="https://www.unicef.or.kr"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#F8FBFF] hover:bg-slate-100 border border-slate-100 text-xs text-slate-600 transition-colors cursor-pointer"
+                >
+                  <span>유니세프 한국위원회 공식 웹사이트</span>
+                  <ExternalLink className="w-3 h-3 text-slate-400" />
+                </a>
+              </div>
             </div>
           </div>
 

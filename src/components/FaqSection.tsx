@@ -1,33 +1,17 @@
 import React, { useState, useMemo } from 'react';
 import { ChevronDown, ChevronUp, HelpCircle, Search, MessageCircleQuestion, ArrowRight } from 'lucide-react';
 import { FAQ_DATA } from '../data/mockData';
-import { FaqCategory } from '../types';
 
 interface FaqSectionProps {
   onOpenInquiry: () => void;
 }
 
 export const FaqSection: React.FC<FaqSectionProps> = ({ onOpenInquiry }) => {
-  const [selectedCategory, setSelectedCategory] = useState<FaqCategory>('전체');
   const [searchQuery, setSearchQuery] = useState<string>('');
-  const [openIds, setOpenIds] = useState<string[]>(['faq-1', 'faq-2']);
-
-  const categories: FaqCategory[] = [
-    '전체',
-    '사업 참여',
-    '사업 운영',
-    '예산',
-    '아동권리교육',
-    '아동참여 및 의견제안',
-    '기타'
-  ];
+  const [openIds, setOpenIds] = useState<string[]>(['faq-2']);
 
   const filteredFaqs = useMemo(() => {
     let list = FAQ_DATA;
-
-    if (selectedCategory !== '전체') {
-      list = list.filter((item) => item.category === selectedCategory);
-    }
 
     if (searchQuery.trim()) {
       const q = searchQuery.toLowerCase();
@@ -39,7 +23,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onOpenInquiry }) => {
     }
 
     return list;
-  }, [selectedCategory, searchQuery]);
+  }, [searchQuery]);
 
   const toggleAccordion = (id: string) => {
     setOpenIds((prev) =>
@@ -48,38 +32,17 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onOpenInquiry }) => {
   };
 
   return (
-    <section id="faq" className="py-16 sm:py-24 bg-white border-t border-slate-100">
+    <section id="faq" className="py-16 sm:py-24 bg-white border-t border-slate-100 scroll-mt-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-10">
           <span className="text-[#009EDB] font-bold text-xs tracking-widest uppercase mb-3 block">
             FREQUENTLY ASKED QUESTIONS
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
             자주 묻는 질문 (FAQ)
           </h2>
-          <p className="text-slate-500 text-base sm:text-lg leading-relaxed">
-            지자체 공무원과 초등학교 교직원이 사업 참여 및 운영 시 가장 궁금해하시는 점을 정리했습니다.
-          </p>
-        </div>
-
-        {/* Category Pills */}
-        <div className="flex items-center overflow-x-auto gap-1 p-1 bg-[#F8FBFF] border border-slate-100 rounded-full mb-6 scrollbar-none shadow-2xs">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              id={`faq-cat-${cat}`}
-              onClick={() => setSelectedCategory(cat)}
-              className={`px-4 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all ${
-                selectedCategory === cat
-                  ? 'bg-[#009EDB] text-white shadow-2xs'
-                  : 'text-slate-500 hover:text-slate-900'
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
         </div>
 
         {/* Keyword Search */}
@@ -89,7 +52,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onOpenInquiry }) => {
             id="faq-search-input"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="궁금한 단어나 질문을 검색해 보세요 (예: 예산, 의견전달, 교사 연구회)"
+            placeholder="궁금한 단어나 질문을 검색해 보세요"
             className="w-full pl-11 pr-4 py-3 text-sm bg-[#F8FBFF] border border-slate-100 rounded-full focus:outline-none focus:ring-2 focus:ring-[#009EDB] focus:bg-white shadow-2xs transition-colors"
           />
           <Search className="w-4 h-4 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2" />
@@ -122,9 +85,6 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onOpenInquiry }) => {
                       Q
                     </span>
                     <div>
-                      <span className="inline-block text-[11px] font-bold text-slate-400 mb-1">
-                        {faq.category}
-                      </span>
                       <h3 className="text-base sm:text-lg font-bold text-slate-900 leading-snug">
                         {faq.question}
                       </h3>
@@ -144,7 +104,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onOpenInquiry }) => {
                 {isOpen && (
                   <div className="px-5 pb-6 sm:px-6 sm:pb-6 pt-1 border-t border-slate-100 animate-in fade-in duration-200">
                     <div className="flex items-start gap-3.5 pl-0 sm:pl-9">
-                      <div className="text-slate-600 text-sm sm:text-base leading-relaxed font-normal bg-white p-4 rounded-[16px] border border-slate-100 shadow-2xs w-full">
+                      <div className="text-slate-600 text-sm sm:text-base leading-relaxed font-normal bg-white p-4 rounded-[16px] border border-slate-100 shadow-2xs w-full whitespace-pre-line">
                         {faq.answer}
                       </div>
                     </div>
@@ -163,7 +123,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onOpenInquiry }) => {
               찾으시는 답변이 없으신가요?
             </h3>
             <p className="text-xs sm:text-sm text-slate-500 mt-1">
-              지자체 참여 요건, 학교 매칭, 예산 편성 등 세부 사항을 직접 문의해 주시면 친절히 안내해 드립니다.
+              궁금한 내용을 직접 문의해 주시면 답변 드리겠습니다.
             </p>
           </div>
 

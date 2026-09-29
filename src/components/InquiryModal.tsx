@@ -15,11 +15,11 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
 }) => {
   const [formData, setFormData] = useState<InquiryFormData>({
     name: '',
-    organizationType: '지방자치단체',
+    organizationType: '지자체',
     organizationName: '',
     contact: '',
     email: '',
-    subject: '2026 City to School 사업 참여 및 운영 문의',
+    subject: '2027 City to School 사업 참여 및 운영 문의',
     message: ''
   });
 
@@ -59,9 +59,6 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
               <h3 className="text-xl font-extrabold text-slate-900">
                 City to School 사업 참여 문의
               </h3>
-              <p className="text-xs text-slate-400">
-                지자체 공무원 및 초등학교 교직원 1:1 전담 상담 창구
-              </p>
             </div>
           </div>
           <button
@@ -77,7 +74,7 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
         <div className="bg-[#F8FBFF] border border-slate-100 rounded-[16px] p-3 mb-5 text-xs text-slate-600 flex items-center gap-2">
           <CheckCircle2 className="w-4 h-4 text-[#009EDB] shrink-0" />
           <span>
-            유니세프 한국위원회 아동친화도시 담당관이 내용을 확인 후 1영업일 이내로 연락드립니다.
+            유니세프 한국위원회 아동친화팀 담당자가 내용을 확인 후 1영업일 이내로 연락드립니다.
           </span>
         </div>
 
@@ -88,8 +85,8 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
             <label className="block font-bold text-slate-700 mb-1.5 text-xs">
               소속 기관 구분 <span className="text-red-500">*</span>
             </label>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-              {(['지방자치단체', '초등학교', '교육지원청', '기타'] as const).map((type) => (
+            <div className="grid grid-cols-3 gap-2">
+              {(['지자체', '초등학교', '기타'] as const).map((type) => (
                 <button
                   type="button"
                   key={type}
@@ -115,7 +112,7 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
               <input
                 type="text"
                 required
-                placeholder="예: 서울 성북구청 / 숭덕초등학교"
+                placeholder="예: 서울 마포구청 / 유니초등학교"
                 value={formData.organizationName}
                 onChange={(e) => setFormData({ ...formData, organizationName: e.target.value })}
                 className="w-full px-3.5 py-2.5 bg-[#F8FBFF] border border-slate-100 rounded-full text-xs focus:outline-none focus:ring-2 focus:ring-[#009EDB] focus:bg-white transition-colors"
@@ -130,7 +127,7 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
               <input
                 type="text"
                 required
-                placeholder="예: 홍길동 주무관 / 김선생 교사"
+                placeholder="예: 홍길동 주무관 / 김유니 교사"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 className="w-full px-3.5 py-2.5 bg-[#F8FBFF] border border-slate-100 rounded-full text-xs focus:outline-none focus:ring-2 focus:ring-[#009EDB] focus:bg-white transition-colors"
@@ -157,7 +154,7 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
             {/* Email */}
             <div>
               <label className="block font-bold text-slate-700 mb-1 text-xs">
-                공식 이메일 <span className="text-red-500">*</span>
+                이메일 <span className="text-red-500">*</span>
               </label>
               <input
                 type="email"
@@ -178,6 +175,7 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
             <input
               type="text"
               required
+              placeholder="2027 City to School 사업 참여 및 운영 문의"
               value={formData.subject}
               onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
               className="w-full px-3.5 py-2.5 bg-[#F8FBFF] border border-slate-100 rounded-full text-xs focus:outline-none focus:ring-2 focus:ring-[#009EDB] focus:bg-white transition-colors"
@@ -192,7 +190,6 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
             <textarea
               required
               rows={3}
-              placeholder="예: 2026년도 하반기 참여 학교 공모 일정과 지자체 매칭 지원 요건, 예산 지원 범위에 대해 문의드립니다."
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
               className="w-full px-3.5 py-2.5 bg-[#F8FBFF] border border-slate-100 rounded-[16px] text-xs focus:outline-none focus:ring-2 focus:ring-[#009EDB] focus:bg-white leading-relaxed transition-colors"

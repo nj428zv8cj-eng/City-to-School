@@ -15,6 +15,7 @@ export interface RoadmapStep {
   duration: string;
   keyActors: string[];
   deliverables: string[];
+  deliverablesTitle?: string;
   tips: string;
   checklist: string[];
 }
@@ -35,15 +36,15 @@ export interface NewsItem {
   tags: string[];
 }
 
-export type ResourceCategory = '전체' | '사업 안내' | '아동권리교육' | '아동참여활동' | '운영 양식' | '홍보자료';
+export type ResourceCategory = '전체' | '사업 안내' | '아동권리 교육' | '아동참여 활동' | '운영 양식';
 
-export type FileType = 'PDF' | 'PPTX' | 'DOCX' | 'HWP';
+export type FileType = 'PDF' | 'PPTX' | 'PPT' | 'DOCX' | 'HWP';
 
 export interface ResourceItem {
   id: string;
   title: string;
   description: string;
-  category: '사업 안내' | '아동권리교육' | '아동참여활동' | '운영 양식' | '홍보자료';
+  category: '사업 안내' | '아동권리 교육' | '아동참여 활동' | '운영 양식';
   fileType: FileType;
   fileSize: string;
   date: string;
@@ -63,7 +64,7 @@ export interface FaqItem {
 
 export interface InquiryFormData {
   name: string;
-  organizationType: '지방자치단체' | '초등학교' | '교육지원청' | '일반시민/연구자' | '기타';
+  organizationType: '지자체' | '초등학교' | '기타';
   organizationName: string;
   contact: string;
   email: string;

@@ -8,21 +8,28 @@ import {
   ChevronRight, 
   FileText, 
   Sparkles, 
-  School 
+  School,
+  Lock,
+  LogIn
 } from 'lucide-react';
 import { NEWS_DATA } from '../data/mockData';
 import { NewsCategory, NewsItem, NavigationSection } from '../types';
+import { UserSession } from './LoginModal';
 
 interface NewsSectionProps {
   isHomeViewOnly?: boolean;
   onNavigateToAllNews?: () => void;
   onSelectArticle: (article: NewsItem) => void;
+  user?: UserSession | null;
+  onOpenLogin?: () => void;
 }
 
 export const NewsSection: React.FC<NewsSectionProps> = ({
   isHomeViewOnly = false,
   onNavigateToAllNews,
-  onSelectArticle
+  onSelectArticle,
+  user,
+  onOpenLogin
 }) => {
   const [selectedCategory, setSelectedCategory] = useState<NewsCategory>('전체');
   const [searchKeyword, setSearchKeyword] = useState<string>('');
@@ -76,7 +83,7 @@ export const NewsSection: React.FC<NewsSectionProps> = ({
   };
 
   return (
-    <section id="news" className="py-16 sm:py-20 bg-white border-t border-slate-100">
+    <section id="news" className="py-16 sm:py-20 bg-white border-t border-slate-100 scroll-mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header Bar */}
@@ -85,12 +92,17 @@ export const NewsSection: React.FC<NewsSectionProps> = ({
             <span className="text-[#009EDB] font-bold text-xs tracking-widest uppercase mb-3 block">
               NEWS & ANNOUNCEMENTS
             </span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-              {isHomeViewOnly ? '최신 소식 및 공지사항' : '공지사항 및 프로젝트 소식'}
-            </h2>
-            <p className="text-slate-500 text-sm mt-1">
-              City to School 프로젝트의 새로운 공고와 현장 실천 이야기를 전해드립니다.
-            </p>
+            <div className="flex items-center gap-2.5 flex-wrap">
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+                공지사항 및 소식
+              </h2>
+              {!user && (
+                <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-50 text-amber-700 border border-amber-200">
+                  <Lock className="w-3 h-3 text-amber-600" />
+                  <span>로그인 전용</span>
+                </span>
+              )}
+            </div>
           </div>
 
           {/* '전체보기' button on home mode */}
@@ -106,8 +118,41 @@ export const NewsSection: React.FC<NewsSectionProps> = ({
           )}
         </div>
 
-        {/* Filter Tabs & Search Bar (Only shown in full view mode) */}
-        {!isHomeViewOnly && (
+        {/* Auth Locked State when not logged in */}
+        {!user ? (
+          <div
+            id="news-auth-locked-box"
+            className="bg-gradient-to-b from-[#F8FBFF] to-blue-50/40 rounded-3xl border border-blue-100/80 p-8 sm:p-14 text-center max-w-2xl mx-auto shadow-xs my-4"
+          >
+            <div className="w-14 h-14 rounded-2xl bg-white border border-blue-100 text-[#009EDB] flex items-center justify-center mx-auto mb-4 shadow-2xs">
+              <Lock className="w-6 h-6 text-[#009EDB]" />
+            </div>
+            <span className="inline-block px-3 py-1 bg-blue-100/70 text-[#009EDB] rounded-full text-xs font-bold mb-3">
+              참여 기관 전용 서비스
+            </span>
+            <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mb-2">
+              공지사항 및 소식은 로그인 후 확인하실 수 있습니다
+            </h3>
+            <p className="text-slate-600 text-sm leading-relaxed max-w-lg mx-auto mb-6">
+              City to School 프로젝트 참여 지자체 담당자 및 학교 교원을 위한 전용 소식 공간입니다.<br className="hidden sm:inline" />
+              로그인하시면 최신 사업 공지와 참여 학교들의 활동 소식을 확인하실 수 있습니다.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <button
+                type="button"
+                id="news-login-btn"
+                onClick={onOpenLogin}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm font-bold text-white bg-[#009EDB] hover:bg-[#007fb1] active:scale-[0.99] transition-all shadow-md shadow-[#009EDB]/20 cursor-pointer"
+              >
+                <LogIn className="w-4 h-4" />
+                <span>로그인하고 소식 확인하기</span>
+              </button>
+            </div>
+          </div>
+        ) : (
+          <>
+            {/* Filter Tabs & Search Bar (Only shown in full view mode) */}
+            {!isHomeViewOnly && (
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8 pb-4 border-b border-slate-100">
             {/* Category tabs */}
             <div className="flex items-center overflow-x-auto w-full sm:w-auto gap-1 p-1 bg-[#F8FBFF] border border-slate-100 rounded-full">
@@ -261,6 +306,8 @@ export const NewsSection: React.FC<NewsSectionProps> = ({
               <ChevronRight className="w-4 h-4" />
             </button>
           </div>
+        )}
+          </>
         )}
 
       </div>
